@@ -27,15 +27,25 @@ void arreglos()
     int nummayor = notas.Max();
     int indmayor = 0;
 
-    for (int i = 0; i < notas.Length; i++)
+    // Utilizando for para encontrar el indice del número mayor
+    //for (int i = 0; i < notas.Length; i++)
+    //{
+    //    if (notas[i] > notas[indmayor])
+    //    {
+    //        indmayor = i;
+    //    }
+    //}
+
+    // Utilizando foreach para encontrar el indice del número mayor
+    foreach (int nota in notas)
     {
-        if (notas[i] > notas[indmayor])
+        if (nota > notas[indmayor])
         {
-            indmayor = i;
+            indmayor = Array.IndexOf(notas, nota);
         }
     }
 
-    Console.WriteLine(nummayor + " " + nombre[indmayor]);
+    Console.WriteLine($"La calificación más alta es {nummayor}, que pertenece a {nombre[indmayor]}.");
 
 }
 
